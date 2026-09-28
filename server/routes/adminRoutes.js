@@ -1,0 +1,14 @@
+const router = require('express').Router();
+const { rateLimit } = require('express-rate-limit');
+const { requireAdmin, requireCsrf } = require('../middleware/adminAuth');
+const controller = require('../controllers/adminController');
+router.post('/login', rateLimit({ windowMs: 15 * 60000, limit: 10, skipSuccessfulRequests: true, standardHeaders: 'draft-8', legacyHeaders: false, message: { success: false, message: 'Too many sign-in attempts. Try again in 15 minutes.' } }), controller.login);
+router.use(requireAdmin);
+router.use(rateLimit({ windowMs: 60000, limit: 180, standardHeaders: 'draft-8', legacyHeaders: false, message: { success: false, message: 'Too many requests. Please wait a minute.' } }));
+router.get('/session', controller.session);
+router.delete('/session', requireCsrf, controller.logout);
+router.get('/registrations/export.csv', controller.csv);
+router.get('/registrations', controller.list);
+router.get('/registrations/:id', controller.detail);
+router.delete('/registrations/:id', requireCsrf, controller.remove);
+module.exports = router;

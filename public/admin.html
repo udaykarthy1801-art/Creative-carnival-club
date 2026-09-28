@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Registration Admin | Creative Carnival</title>
+  <meta name="robots" content="noindex,nofollow">
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg?v=2">
+  <link rel="stylesheet" href="css/style.css"><link rel="stylesheet" href="css/admin.css">
+  <script src="js/admin.js" defer></script>
+</head>
+<body>
+<a href="#admin-main" class="skip-link">Skip to content</a>
+<header><div class="container header-inner"><a class="brand" href="/"><span class="brand-mark" aria-hidden="true">C</span><div><div class="logo">CREATIVE CARNIVAL</div><div class="tagline">Visitor registration administration</div></div></a><nav aria-label="Admin navigation"><a href="/">Event website</a><button type="button" class="btn secondary" id="logout" hidden>Sign out</button></nav></div></header>
+<main class="container admin-main" id="admin-main">
+  <div class="section-heading"><div><div class="eyebrow">Creative Carnival · 2026</div><h1 class="admin-title">Visitor registrations</h1></div><p class="section-note">Authorized administrators only.</p></div>
+  <p id="adminStatus" class="status-message" role="status" aria-live="polite" aria-atomic="true" tabindex="-1"></p>
+  <section id="loginPanel" class="form-box login-panel" aria-labelledby="loginHeading">
+    <h2 id="loginHeading">Administrator sign-in</h2>
+    <form id="loginForm">
+      <div class="field field-wide"><label for="username">Username</label><input id="username" name="username" autocomplete="username" maxlength="100" required></div>
+      <div class="field field-wide"><label for="password">Password</label><input id="password" name="password" type="password" autocomplete="current-password" maxlength="256" required></div>
+      <button class="btn field-wide" type="submit">Sign in</button>
+    </form>
+  </section>
+  <section id="dashboard" hidden aria-labelledby="resultsHeading">
+    <form id="filterForm" class="filter-form form-box" role="search">
+      <div class="field search-field"><label for="search">Search name, mobile, or registration ID</label><input id="search" name="q" type="search" maxlength="120" placeholder="Search visitors"></div>
+      <div class="field"><label for="filterVisitorType">Visitor type</label><select id="filterVisitorType" name="visitorType"><option value="">All visitor types</option><option>Student 11th</option><option>Student 12th</option><option>College Student</option><option>Worker / Job</option><option>General Visitor</option></select></div>
+      <div class="field"><label for="filterPurpose">Purpose</label><select id="filterPurpose" name="purpose"><option value="">All purposes</option><option>Event Visit</option><option>Project Exhibition</option><option>Innovation</option><option>General Visitor</option></select></div>
+      <div class="field"><label for="sort">Registration date</label><select id="sort" name="sort"><option value="newest">Newest first</option><option value="oldest">Oldest first</option></select></div>
+      <div class="filter-actions"><button class="btn" type="submit">Apply filters</button><button class="btn secondary" id="exportCsv" type="button">Export CSV</button></div>
+    </form>
+    <div class="results-heading"><h2 id="resultsHeading">Registrations</h2><p id="resultCount"></p></div>
+    <div id="registrationList" class="registration-list"></div>
+    <div class="pagination"><button class="btn secondary" id="previousPage" type="button">Previous</button><span id="pageInfo"></span><button class="btn secondary" id="nextPage" type="button">Next</button></div>
+  </section>
+  <dialog id="detailDialog" aria-labelledby="detailHeading"><div class="dialog-heading"><h2 id="detailHeading">Visitor details</h2><button type="button" id="closeDetails" class="btn secondary">Close</button></div><div id="detailContent" class="visitor-details"></div><button type="button" id="deleteRegistration" class="btn danger">Delete registration</button></dialog>
+</main>
+<footer><div class="container footer-inner"><span class="footer-name">CREATIVE CARNIVAL</span><span>06 October 2026 · Creative Carnival Campus</span></div></footer>
+</body>
+</html>

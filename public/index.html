@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Creative Carnival | Mega Visitors Day</title>
+<link rel="icon" type="image/jpeg" href="assets/creative-carnival.jpg?v=2">
+<link rel="icon" type="image/svg+xml" sizes="any" href="assets/favicon.svg?v=2">
+
+<link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+<!-- Remove the light matte at display time; the supplied JPG stays unchanged. -->
+<svg class="background-filter" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><defs>
+  <filter id="remove-light-background" color-interpolation-filters="sRGB">
+    <feColorMatrix type="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  -8 -8 -8 0 23"/>
+  </filter>
+</defs></svg>
+<div class="background-art" aria-hidden="true"><img src="assets/creative-carnival.jpg" width="567" height="440" alt="" fetchpriority="high"></div>
+
+<a class="skip-link" href="#main">Skip to content</a>
+<!-- HEADER -->
+<header><div class="container header-inner">
+  <a class="brand" href="#main" aria-label="Creative Carnival home"><span class="brand-mark" aria-hidden="true">C</span><div><div class="logo">CREATIVE CARNIVAL</div><div class="tagline">Innovation • Creativity • Celebration</div></div></a>
+  <nav aria-label="Main navigation"><a href="#event">The experience</a><a class="nav-register" href="#register">Register <span aria-hidden="true">↗</span></a></nav>
+</div></header>
+<main id="main">
+<!-- HOME -->
+<section class="hero container" aria-labelledby="hero-title">
+  <div class="hero-copy">
+    <div class="eyebrow">A celebration of possibility</div>
+    <h1 id="hero-title"><span class="mega">MEGA</span><span class="title-line">VISITORS</span><span class="title-line gold">DAY</span></h1>
+    <p>Welcome to Creative Carnival Mega Visitors Day!<br>Register now and be part of the experience.</p>
+    <div class="hero-actions"><a href="#register" class="btn">Register Now <span aria-hidden="true">↗</span></a><a href="#event" class="text-link">Explore the event</a></div>
+    <div class="hero-date"><time datetime="2026-10-06">06 October 2026</time><i aria-hidden="true"></i><span>9:30 AM – 12:30 PM</span></div>
+  </div>
+</section>
+<!-- EVENT DETAILS -->
+<section class="event container" id="event" aria-labelledby="event-heading">
+  <div class="section-heading"><div><div class="eyebrow">Mark your calendar</div><h2 id="event-heading">Event Details</h2></div><p class="section-note">A morning of fresh ideas, inspiring projects and creative connections.</p></div>
+  <div class="event-box">
+    <article class="detail-card"><div class="detail-top"><span class="icon" aria-hidden="true"><svg viewBox="0 0 32 32"><rect x="5" y="7" width="22" height="21" rx="3"/><path d="M10 4v6m12-6v6M5 14h22m-16 6h3m4 0h3m-10 4h3"/></svg></span><span class="detail-label">Date</span></div><h3><time datetime="2026-10-06">06 October 2026</time></h3><p>A day to discover something new.</p></article>
+    <article class="detail-card"><div class="detail-top"><span class="icon" aria-hidden="true"><svg viewBox="0 0 32 32"><circle cx="16" cy="16" r="12"/><path d="M16 8v9l6 3"/></svg></span><span class="detail-label">Time</span></div><h3>9:30 AM – 12:30 PM</h3><p>Three hours of inspiration.</p></article>
+    <article class="detail-card"><div class="detail-top"><span class="icon" aria-hidden="true"><svg viewBox="0 0 32 32"><path d="M25 13c0 7-9 15-9 15S7 20 7 13a9 9 0 0 1 18 0Z"/><circle cx="16" cy="13" r="3"/></svg></span><span class="detail-label">Venue</span></div><h3>Creative Carnival Campus</h3><p>We look forward to welcoming you.</p></article>
+  </div>
+  <div class="experience"><div><h3>Creative Carnival Mega Visitors Day</h3><p>Experience creativity, innovation, projects and exciting activities.</p></div><div class="experience-tags" aria-label="Event experiences"><span>Creativity</span><span>Innovation</span><span>Celebration</span></div></div>
+</section>
+<!-- REGISTRATION FORM -->
+<section class="register container" id="register" aria-labelledby="register-heading">
+  <div class="registration-intro"><div class="eyebrow">Be part of the experience</div><h2 id="register-heading">Your curiosity.<br>Our invitation.</h2><p>Join us for Creative Carnival Mega Visitors Day. Fill in your details to prepare your visitor registration.</p><div class="invitation"><p>Great ideas begin with a little curiosity.</p><span>Innovation • Creativity • Celebration</span></div></div>
+  <div class="form-box"><div class="form-heading"><h3>Visitor Registration</h3><p>All fields required except Message</p></div>
+    <form id="visitorForm">
+      <p id="registrationStatus" class="status-message" role="status" aria-live="polite" aria-atomic="true" tabindex="-1"></p>
+      <div class="field"><label for="name">Full Name</label><input type="text" id="name" minlength="2" maxlength="120" name="name" placeholder="Enter your full name" autocomplete="name" required></div>
+      <div class="field"><label for="mobile">Mobile Number</label><input type="tel" id="mobile" name="mobile" placeholder="10-digit mobile number" autocomplete="tel-national" inputmode="numeric" maxlength="10" pattern="[0-9]{10}" title="Enter a 10-digit mobile number" aria-describedby="mobile-help" required><p class="field-help" id="mobile-help">10 digits, without spaces or country code.</p></div>
+      <div class="field"><label for="email">Email</label><input type="email" id="email" maxlength="254" name="email" placeholder="you@example.com" autocomplete="email" required></div>
+      <div class="field"><label for="visitorType">Visitor Type</label><select id="visitorType" name="visitorType" required><option value="">Select Visitor Type</option><option value="Student 11th">Student – 11th</option><option value="Student 12th">Student – 12th</option><option value="College Student">College Student</option><option value="Worker / Job">Worker / Job</option><option value="General Visitor">General Visitor</option></select></div>
+      <div class="field field-wide"><label for="college">College / Organization</label><input type="text" id="college" minlength="2" maxlength="200" name="college" placeholder="Enter college or organization" autocomplete="organization" required></div>
+      <div class="field"><label for="purpose">Visit Purpose</label><select id="purpose" name="purpose" required><option value="">Select purpose</option><option value="Event Visit">Event Visit</option><option value="Project Exhibition">Project Exhibition</option><option value="Innovation">Innovation</option><option value="General Visitor">General Visitor</option></select></div>
+      <div class="field"><label for="reference">Referred By / Reference</label><input type="text" id="reference" maxlength="200" name="reference" placeholder="Type any reference" required></div>
+      <div class="field field-wide"><label for="message">Message <span class="optional">(optional)</span></label><textarea id="message" maxlength="2000" name="message" rows="4" placeholder="Anything you would like us to know?"></textarea></div>
+      <div class="form-submit"><button class="btn" type="submit">Submit Registration <span aria-hidden="true">↗</span></button><p>Your registration is saved securely. Print the confirmation to keep your registration ID.</p></div>
+    </form><noscript><p class="status-message">Please enable JavaScript to register online.</p></noscript>
+  </div>
+</section>
+<!-- CONFIRMATION -->
+<section id="confirmation" class="container" aria-labelledby="confirmation-heading" hidden>
+  <div class="confirm-box"><div class="print-brand">CREATIVE CARNIVAL</div><div class="success-mark" aria-hidden="true">✓</div>
+    <h2 id="confirmation-heading" tabindex="-1">Registration Successful!</h2><p>Welcome to Creative Carnival Mega Visitors Day.</p><p>06 October 2026 · 9:30 AM – 12:30 PM<br>Creative Carnival Campus</p>
+    <p>Registration ID<strong id="showRegistrationId" class="registration-id"></strong></p>
+    <div class="visitor-details">
+      <p><strong>Name:</strong><span id="showName"></span></p><p><strong>Mobile:</strong><span id="showMobile"></span></p><p><strong>Email:</strong><span id="showEmail"></span></p><p><strong>College:</strong><span id="showCollege"></span></p><p><strong>Purpose:</strong><span id="showPurpose"></span></p><p><strong>Visitor Type:</strong><span id="showVisitorType"></span></p><p><strong>Reference:</strong><span id="showReference"></span></p><p><strong>Message:</strong><span id="showMessage"></span></p>
+    </div><button class="btn" type="button" id="printRegistration">Print Registration <span aria-hidden="true">↗</span></button>
+  </div>
+</section>
+</main>
+<!-- FOOTER -->
+<footer><div class="container footer-inner"><span class="footer-name">CREATIVE CARNIVAL</span><span>© 2026 Creative Carnival | Mega Visitors Day</span><a href="#main">Back to top ↑</a></div></footer>
+
+<script src="js/app.js" defer></script>
+
+</body>
+</html>
